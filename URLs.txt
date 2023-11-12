@@ -1,0 +1,10 @@
+
+http POST :9001/books author="Lyra Silverstar" \
+ title="Northern Lights" isbn="1234567891" price=9.90
+
+#Create
+curl http://localhost:9001/books  -H "Content-Type: application/json" -d '{"author":"Lyra Silverstar", "title":"Northern Lights", "isbn":"1234567891", "price":9.90}'
+
+#Find
+curl http://localhost:9001/books/1234567891
+
