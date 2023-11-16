@@ -8,3 +8,6 @@ curl http://localhost:9001/books  -H "Content-Type: application/json" -d '{"auth
 #Find
 curl http://localhost:9001/books/1234567891
 
+#Trigger a RefreshScopeRefreshedEvent
+curl -XPOST http://localhost:9001/actuator/refresh
+
