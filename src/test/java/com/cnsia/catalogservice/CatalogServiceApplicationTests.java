@@ -1,6 +1,7 @@
 package com.cnsia.catalogservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import com.cnsia.catalogservice.domain.Book;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("integration")
 class CatalogServiceApplicationTests {
 
   @Autowired
@@ -21,7 +23,7 @@ class CatalogServiceApplicationTests {
 
    @Test
   void whenPostRequestThenBookCreated() {
-  var expectedBook = new Book("1231231231", "Title", "Author", 9.90);
+  var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
  
     webTestClient
       .post().uri("/books")
