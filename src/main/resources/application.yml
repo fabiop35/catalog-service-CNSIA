@@ -42,4 +42,6 @@ management:
       exposure:
         include: refresh
 
-
+logging:
+  level:
+    sql: debug
