@@ -11,7 +11,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 public record Book (
 
   @Id
@@ -37,6 +38,12 @@ public record Book (
   @LastModifiedDate
   Instant lastModifiedDate,
 
+  @CreatedBy
+  String createdBy,
+
+  @LastModifiedBy
+  String lastModifiedBy,
+
   @Version
   int version
   ) {
@@ -46,7 +53,7 @@ public record Book (
         String author, Double price,
         String publisher) {
         return new Book(
-    null, isbn, title, author, price, publisher, null, null, 0);
+    null, isbn, title, author, price, publisher, null, null, null, null, 0);
     }
 
 

@@ -48,6 +48,8 @@ public Book editBookDetails(String isbn, Book book) {
           book.publisher(),
           existingBook.createdDate(),
           existingBook.lastModifiedDate(),
+          existingBook.createdBy(),
+          existingBook.lastModifiedBy(),
           existingBook.version()
           );
     return bookRepository.save(bookToUpdate);
